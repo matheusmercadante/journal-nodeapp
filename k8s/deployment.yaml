@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: journal-nodeapp
+spec:
+  selector:
+    matchLabels:
+      app: journal-nodeapp
+  template:
+    metadata:
+      labels:
+        app: journal-nodeapp
+    spec:
+      containers:
+      - name: nodeapp
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3333
