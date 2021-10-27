@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: journal-service
+  name: journal-service-nodeapp
 spec:
+  type: LoadBalancer
   selector:
-    app: journal
+    app: journal-nodeapp
   ports:
   - port: 3333
     targetPort: 3333
